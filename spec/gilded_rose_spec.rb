@@ -218,53 +218,53 @@ describe GildedRose do
         end
       end
     end
-  #
-  #   describe "#Sulfuras, Hand of Ragnaros" do
-  #
-  #     describe "#quality" do
-  #
-  #       it "should not change" do
-  #         items = [Item.new("Sulfuras, Hand of Ragnaros", 10, 10)]
-  #         GildedRose.new(items).update_quality()
-  #         expect(items[0].quality).to eq 10
-  #       end
-  #     end
-  #
-  #     describe "#sell_in" do
-  #
-  #       it "should not change" do
-  #         items = [Item.new("Sulfuras, Hand of Ragnaros", 0, 10)]
-  #         GildedRose.new(items).update_quality()
-  #         expect(items[0].sell_in).to eq 0
-  #       end
-  #     end
-  #   end
-  #
-  #   describe "#Conjured item" do
-  #
-  #     describe "#quality" do
-  #
-  #       it "should degrade at double the rate" do
-  #         items = [Item.new("Conjured, soap", 5, 10)]
-  #         GildedRose.new(items).update_quality()
-  #         expect(items[0].quality).to eq 8
-  #       end
-  #
-  #       it "continues to degrade twice as fast after sell_in = 0" do
-  #         items = [Item.new("Conjured, shampoo", 0, 8)]
-  #         GildedRose.new(items).update_quality()
-  #         expect(items[0].quality).to eq 6
-  #       end
-  #     end
-  #
-  #     describe "#sell_in" do
-  #
-  #       it "should decrease by 1 everyday" do
-  #         items =  [Item.new("Conjured, conditioner", 5, 3)]
-  #         GilderedRose.new(items).update_quality()
-  #         expect(items[0].sell_in).to eq 4
-  #       end
-  #     end
-  #   end
+
+    describe "#Sulfuras, Hand of Ragnaros" do
+
+      describe "#quality" do
+
+        it "should not change" do
+          items = [Item.new("Sulfuras, Hand of Ragnaros", 10, 10)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 10
+        end
+      end
+
+      describe "#sell_in" do
+
+        it "should not change" do
+          items = [Item.new("Sulfuras, Hand of Ragnaros", 0, 10)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].sell_in).to eq 0
+        end
+      end
+    end
+
+    describe "#Conjured item" do
+
+      describe "#quality" do
+
+        it "should degrade at double the rate" do
+          items = [Item.new("Conjured", 5, 10)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 8
+        end
+
+        it "continues to degrade twice as fast after sell_in = 0" do
+          items = [Item.new("Conjured", 0, 8)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 6
+        end
+      end
+
+      describe "#sell_in" do
+
+        it "should decrease by 1 everyday" do
+          items =  [Item.new("Conjured", 5, 3)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].sell_in).to eq 4
+        end
+      end
+    end
   end
 end

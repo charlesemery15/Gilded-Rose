@@ -8,13 +8,14 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
-      if item.name == "Aged Brie"
+      case item.name
+      when "Aged Brie"
         aged(item)
-      elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
+      when "Backstage passes to a TAFKAL80ETC concert"
         backstage(item)
-      elsif item.name == "Sulfuras, Hand of Ragnaros"
-        legendary(item)
-      elsif item.name == "Conjured"
+      when "Sulfuras, Hand of Ragnaros"
+        lengendary(item)
+      when "Conjured"
         conjured(item)
       else
         standard(item)
@@ -38,11 +39,13 @@ class GildedRose
   end
 
   def lengendary(item)
-
+    item.quality = item.quality
+    item.sell_in = item.sell_in
   end
 
   def conjured(item)
-
+    item.quality -= 2
+    item.sell_in -= 1
   end
 
   def standard(item)
